@@ -1,0 +1,203 @@
+# It is not recommended to use skript on your server.
+# This skript requires SkRayFall, SkQuery and Skript to work correctly.
+
+
+
+# ░█████╗░░█████╗░███╗░░██╗███████╗██╗░██████╗░██╗░░░██╗██████╗░░█████╗░████████╗██╗░█████╗░███╗░░██╗
+# ██╔══██╗██╔══██╗████╗░██║██╔════╝██║██╔════╝░██║░░░██║██╔══██╗██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║
+# ██║░░╚═╝██║░░██║██╔██╗██║█████╗░░██║██║░░██╗░██║░░░██║██████╔╝███████║░░░██║░░░██║██║░░██║██╔██╗██║
+# ██║░░██╗██║░░██║██║╚████║██╔══╝░░██║██║░░╚██╗██║░░░██║██╔══██╗██╔══██║░░░██║░░░██║██║░░██║██║╚████║
+# ╚█████╔╝╚█████╔╝██║░╚███║██║░░░░░██║╚██████╔╝╚██████╔╝██║░░██║██║░░██║░░░██║░░░██║╚█████╔╝██║░╚███║
+# ░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚═╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝
+
+options:
+# If you want to see the update alerts.
+  update-alerts: true
+# DON'T CHANGE THIS
+  version: v1-STABLE
+# There are the permissions node.
+  PermissionBypass: stopalerts.bypass
+  PermissionStopShot: stopalerts.use
+  PermissionAdmin: stopalerts.admin
+# This is the range (in blocks) to make this command work only if a player is some distance away from you
+  Range: 10
+# This is the cooldown from one command to another
+  Cooldown: 15 seconds
+# You can add there the disabled worlds.
+  DisabledWorlds: "world_nether" or "world_the_end" or "yourworld"
+
+# ███╗░░░███╗███████╗░██████╗░██████╗░█████╗░░██████╗░███████╗░██████╗
+# ████╗░████║██╔════╝██╔════╝██╔════╝██╔══██╗██╔════╝░██╔════╝██╔════╝
+# ██╔████╔██║█████╗░░╚█████╗░╚█████╗░███████║██║░░██╗░█████╗░░╚█████╗░
+# ██║╚██╔╝██║██╔══╝░░░╚═══██╗░╚═══██╗██╔══██║██║░░╚██╗██╔══╝░░░╚═══██╗
+# ██║░╚═╝░██║███████╗██████╔╝██████╔╝██║░░██║╚██████╔╝███████╗██████╔╝
+# ╚═╝░░░░░╚═╝╚══════╝╚═════╝░╚═════╝░╚═╝░░╚═╝░╚═════╝░╚══════╝╚═════╝░
+
+# This message appears when you send an alert
+  MessageSend: &7You have sent a stop alert to &a&n%arg-1%&7!
+  AdminNotify: &f[&7Spy&f] &a%executor% &7sent a stop alert to &a%arg-1%&7!
+# This message appears when you send an alert but you don't have the permission
+  NoPerm: &cYou don't have the permissions to do this.
+# This message appears when you send an alert bot you don't write a player name
+  NoSet: &cYou have to specify a player!
+# This message appears when you send an alert bot you wrote your player name
+  YourSelf: &cYou have to specify an another player!
+# This message appears when you send an alert but the receiver is too far away
+  NoRange: &cThis player is too far away!
+# This message appears when you send an alert but the receiver is offline
+  NoOnline: &cUnable to find this player!
+# This message are the title and the subtitle who will receive the receiver
+  MessageTitle: &c&lSTOP OR SHOOT
+  MessageSubTitle: &7You have been warned by %executor%
+# This message appears when you send an alert but you have a cooldown
+  CooldownMessage: &cYou have to wait &f%difference between 15 seconds and {_waited}%&c!
+# This message appears when you use /stopreload
+  Reloaded: &aConfig Reloaded!
+# This message appears when you use /stoporshothelp (/fermohelp, /fermoosparohelp)
+  HelpCommand: &6Use: &7/stoporshot (&f/fermo, /fermoosparo&7)
+# This message appears when you use the command but you are in a disabled world.
+  DisabledWorldMessage: &cThe world is currently disabled!
+# This message appears when you use the command but the player have the Bypass Permission!
+  Bypass: &cThe target player bypass this action!
+
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+# DON'T TOUCH THIS IF YOU DON'T KNOW WHAT YOU'RE DOING!
+
+command /stoporshot [<player>]:
+	aliases: /fermo, /fermoosparo, /stopalert
+	usage: &7Use: &c/stoporshot &f[&7Name&f]
+	executable by: players
+	trigger:
+		if player's world is {@DisabledWorlds}:
+			send "{@DisabledWorldMessage}" to player
+			stop
+		else:
+			set {_waited} to difference between {stoporshot.%player%.lastused} and now
+			if arg 1's world is {@DisabledWorlds}:
+				send "{@DisabledWorldMessage}" to player
+				stop
+				set {_waited} to difference between {stoporshot.%player%.lastused} and now
+			else:
+				set {_waited} to difference between {stoporshot.%player%.lastused} and now
+				if {_waited} is less than {@Cooldown}:
+					message "{@CooldownMessage}"
+					stop
+				else:
+					if player has permission "{@PermissionStopShot}":
+						if arg 1 is set:
+							if executor is not arg-1:
+								if arg-1 is online:
+									if distance between player and arg 1 is smaller than {@Range}:
+										if arg-1 has permission "{@PermissionBypass}":
+											send "{@Bypass}" to executor
+											stop
+										else:
+											loop all players:
+												if loop-player has permission "{@PermissionAdmin}":
+													send "{@AdminNotify}" to loop-player
+											set {stoporshot.%player%.lastused} to now
+											send arg-1 title "{@MessageTitle}" with subtitle "{@MessageSubTitle}" for 5 seconds
+											send "{@MessageSend}" to player
+									else:
+										send "{@NoRange}" to player
+								else:
+									send "{@NoOnline}" to player
+							else:
+								send "{@YourSelf}" to player
+						else:
+							send "{@NoSet}" to player
+					else:
+						send "{@NoPerm}" to player
+
+command /stopreload:
+	aliases: /stopalert, /fermoreload, /fermoosparoreload
+	trigger:
+		if player has permission "{@PermissionAdmin}":
+			if {@update-alerts} is true:
+				if text from "https://pastebin.com/raw/EuydTVhY" is not "{@version}":
+					message "{@Reloaded}" to executor
+					send "[STOPALERTS] &aSkript reloaded successfully!" to console
+					send "&f[&7STOPALERTS&f] &cVersion outdated! Download the newest version of STOPALERTS on SpigotMC!" to player
+					reload script "STOP-ALERTS-SKRIPT.sk"
+					stop
+				else:
+					message "{@Reloaded}" to executor
+					send "[STOPALERTS] &aSkript reloaded successfully!" to console
+					reload script "STOP-ALERTS-SKRIPT.sk"
+			else:
+				message "{@Reloaded}" to executor
+				send "[STOPALERTS] &aSkript reloaded successfully!" to console
+				reload script "STOP-ALERTS-SKRIPT.sk"
+				stop
+		else:
+			send "{@NoPerm}" to player
+
+command /stoporshothelp:
+	aliases: /fermohelp, /fermoosparohelp, /stopalerthelp
+	executable by: players
+	trigger:
+		if player has permission "{@PermissionAdmin}":
+			message "&8&m----------&6&l STOP ALERTS &8&m----------" to executor
+			message " {@HelpCommand}" to executor
+			message "&8&m----------------------------------" to executor
+			if {@update-alerts} is true:
+				if text from "https://pastebin.com/raw/EuydTVhY" is not "{@version}":
+					send "&f[&7STOPALERTS&f] &cYou are not running the latest version! Download the newest version of STOPALERTS on SpigotMC!" to executor
+					stop
+			else:
+				stop
+		else:
+			message "{@NoPerm}" to executor
+
+on load:
+	wait 2 seconds
+	send " " to console
+	send "&8&m-----------------------------" to console
+	send " &6&lSTOP ALERTS {@version}" to console
+	send " &7Loading..." to console
+	wait 1 second
+	send " &aLoaded successfully!" to console
+	send "&8&m-----------------------------" to console
+	send " " to console
+	if {@update-alerts} is true:
+		if text from "https://pastebin.com/raw/EuydTVhY" is not "{@version}":
+			send "[STOPALERTS] &cVersion outdated! Download the newest version of STOPALERTS from SpigotMC!" to console
+			stop
+		else:
+			send "[STOPALERTS] &aYou are up to date!" to console
+			stop
+	else:
+		stop
+
+on join:
+	if player has permission "{@PermissionAdmin}":
+		if {@update-alerts} is true:
+			if text from "https://pastebin.com/raw/EuydTVhY" is not "{@version}":
+				send "[STOPALERTS] &cVersion outdated! Download the newest version of STOPALERTS from SpigotMC!" to player
+				stop
+			else:
+				stop
+		else:
+			stop
+	else:
+		stop
